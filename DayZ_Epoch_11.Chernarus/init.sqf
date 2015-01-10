@@ -26,7 +26,13 @@ spawnArea= 1500; // Default = 1500
 MaxVehicleLimit = 300; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 14000; // Default = 10000
-dayz_maxLocalZombies = 30; // Default = 30
+dayz_maxLocalZombies = 15; // Default = 30
+
+// Default Loadout Config for New Spawns
+DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
+DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD"];
+DefaultBackpack = "DZ_TerminalPack_EP1";
+DefaultBackpackWeapon = "";
 
 dayz_paraSpawn = false;
 
