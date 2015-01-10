@@ -21,11 +21,15 @@ enableSentences false;
 
 // Default Loadout Config for New Spawns
 DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
-DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD"];
+DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD","ItemToolbox"];
 DefaultBackpack = "DZ_TerminalPack_EP1";
 DefaultBackpackWeapon = "";
+DefaultBackpackItems = [];
 
 dayz_paraSpawn = true;
+DZE_ForceNameTags = true;
+DZE_SelfTransfuse = true;
+DZE_selfTransfuse_Values = [12000, 0, 30];
 
 // DayZ Epoch config
 DZE_ConfigTrader = true;
