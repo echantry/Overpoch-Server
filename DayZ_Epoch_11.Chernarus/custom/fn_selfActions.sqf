@@ -1043,3 +1043,35 @@ if((speed player <= 1) && hasSecondary && _canDo) then {
 };
  
 // ---------------------------------------SUICIDE END------------------------------------
+
+// ---------------------------------------TAKE CLOTHES------------------------------------
+_clothesTaken = _cursorTarget getVariable["clothesTaken",false];
+
+// Take clothes by Zabn
+if (_isMan and !_isAlive and !_isZombie and !_clothesTaken) then {
+	if (s_player_clothes < 0) then {
+		s_player_clothes = player addAction [("<t color='#0096ff'>")+("Take Clothes")+("</t>"), "player_takeClothes_v2.sqf",[_cursorTarget], -10, false, true, "",""];
+	};
+} else {
+	player removeAction s_player_clothes;
+	s_player_clothes = -1;
+	};
+	
+//Sleep
+if(_isTent and _ownerID == dayz_characterID) then {
+	if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
+		s_player_sleep = player addAction [localize "str_actions_self_sleep", "\z\addons\dayz_code\actions\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
+	};
+} else {
+	player removeAction s_player_sleep;
+	s_player_sleep = -1;
+};
+
+// Take Clothes by Zabn
+player removeAction s_player_clothes;
+s_player_clothes = -1;
+
+player removeAction s_player_studybody;
+s_player_studybody = -1;
+		
+// ---------------------------------------TAKE CLOTHES END------------------------------------
