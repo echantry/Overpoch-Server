@@ -17,6 +17,16 @@ enableRadio false;
 // May prevent "how are you civillian?" messages from NPC
 enableSentences false;
 
+// Custom Overpoch settings
+
+// Default Loadout Config for New Spawns
+DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
+DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD"];
+DefaultBackpack = "DZ_TerminalPack_EP1";
+DefaultBackpackWeapon = "";
+
+dayz_paraSpawn = true;
+
 // DayZ Epoch config
 DZE_ConfigTrader = true;
 DZE_MissionLootTable = true;
@@ -27,12 +37,6 @@ MaxVehicleLimit = 300; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 15; // Default = 30
-
-// Default Loadout Config for New Spawns
-DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
-DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD"];
-DefaultBackpack = "DZ_TerminalPack_EP1";
-DefaultBackpackWeapon = "";
 
 dayz_paraSpawn = false;
 

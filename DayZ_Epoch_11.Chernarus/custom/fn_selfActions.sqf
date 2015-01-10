@@ -962,3 +962,64 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
+
+//--------------------------------------Deploy Moped----------------------------------
+//------------------------------------------Start-------------------------------------
+_weapons = [currentWeapon player] + (weapons player) + (magazines player);
+_isMoped = typeOf cursorTarget in ["TT650_Civ"];
+
+//MOPED DEPLOY
+//if ("ItemToolbox" in _weapons && "PartGeneric" in _mags && "PartGeneric" in _mags && "PartEngine" in _mags && "PartWheel" in _mags && "PartWheel" in _mags) then {
+if ("ItemToolbox" in _weapons) then {
+hasMopedItem = true;
+} else { hasMopedItem = false;};
+if((speed player <= 1) && hasMopedItem && _canDo) then {
+if (s_player_deploymoped < 0) then {
+s_player_deploymoped = player addaction[("<t color=""#4eff00"">" + ("Deploy Moped") +"</t>"),"deployables\moped\deploy.sqf","",5,false,true,"", ""];
+};
+} else {
+player removeAction s_player_deploymoped;
+s_player_deploymoped = -1;
+};
+
+//PACK MOPED
+if((_isMoped && "ItemToolbox" in _weapons && (player distance cursorTarget < 10)) and _canDo) then {
+if (s_player_deploymoped2 < 0) then {
+s_player_deploymoped2 = player addaction[("<t color=""#4eff00"">" + ("Re-Pack Moped") +"</t>"),"deployables\moped\pack.sqf","",5,false,true,"", ""];
+};
+} else {
+player removeAction s_player_deploymoped2;
+s_player_deploymoped2 = -1;
+};
+//--------------------------------------Deploy Moped-----------------------------------
+//-------------------------------------------End---------------------------------------
+
+//--------------------------------------Deploy Mozzie----------------------------------
+//------------------------------------------Start--------------------------------------
+_weapons = [currentWeapon player] + (weapons player) + (magazines player);
+_isMozzie = typeOf cursorTarget in ["CSJ_GyroC"];
+
+//MOZZIE DEPLOY
+if ("ItemToolbox" in _weapons && "PartGeneric" in _mags && "PartGeneric" in _mags && "PartEngine" in _mags && "ItemJerrycan" in _mags && "PartVRotor" in _mags) then {
+hasMozzieItem = true;
+} else { hasMozzieItem = false;};
+if((speed player <= 1) && hasMozzieItem && _canDo) then {
+if (s_player_deploymozzie < 0) then {
+s_player_deploymozzie = player addaction[("<t color=""#4eff00"">" + ("Deploy Mozzie") +"</t>"),"deployables\mozzie\deploy.sqf","",5,false,true,"", ""];
+};
+} else {
+player removeAction s_player_deploymozzie;
+s_player_deploymozzie = -1;
+};
+
+//PACK MOZZIE
+if((_isMozzie && "ItemToolbox" in _weapons && (player distance cursorTarget < 10)) and _canDo) then {
+if (s_player_deploymozzie2 < 0) then {
+s_player_deploymozzie2 = player addaction[("<t color=""#4eff00"">" + ("Re-Pack Mozzie") +"</t>"),"deployables\mozzie\pack.sqf","",5,false,true,"", ""];
+};
+} else {
+player removeAction s_player_deploymozzie2;
+s_player_deploymozzie2 = -1;
+};
+//--------------------------------------Deploy Mozzie-----------------------------------
+//--------------------------------------------End---------------------------------------
