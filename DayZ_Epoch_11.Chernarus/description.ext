@@ -185,3 +185,7 @@ class RscTextGUIK {
 };
 
 #include "custom\gui\ATD_Hud.h"
+#include "spawn\defines.hpp"
+#include "spawn\class.hpp"
+#include "spawn\halo.hpp"
+#include "spawn\spawn.hpp"

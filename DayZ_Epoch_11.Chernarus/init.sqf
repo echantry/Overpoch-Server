@@ -20,13 +20,14 @@ enableSentences false;
 // Custom Overpoch settings
 
 // Default Loadout Config for New Spawns
-DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
-DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD","ItemToolbox"];
-DefaultBackpack = "DZ_TerminalPack_EP1";
-DefaultBackpackWeapon = "";
-DefaultBackpackItems = [];
+//DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","ItemBandage","ItemBandage","ItemMorphine","FoodCanFrankBeans","ItemSodaPepsi","ItemPainkiller","ItemHeatPack"];
+//DefaultWeapons = ["ItemMap","ItemCompass","ItemWatch","MakarovSD","ItemToolbox"];
+//DefaultBackpack = "DZ_TerminalPack_EP1";
+//DefaultBackpackWeapon = "";
+//DefaultBackpackItems = [];
 
-dayz_paraSpawn = true;
+dayz_spawnselection = 0;
+dayz_paraSpawn = false;
 DZE_ForceNameTags = true;
 DZE_SelfTransfuse = true;
 DZE_selfTransfuse_Values = [12000, 0, 30];
@@ -42,7 +43,12 @@ MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 15; // Default = 30
 
-dayz_paraSpawn = false;
+setViewDistance = 2500;
+
+DZE_DeathMsgTitleText = true;
+DZE_DeathMsgGlobal = true;
+DZE_requireplot = 0;
+DZE_PlayerZed = false;
 
 dayz_minpos = -1; 
 dayz_maxpos = 16000;
@@ -104,3 +110,6 @@ execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+
+waitUntil {!isNil "PVDZE_plr_LoginRecord"};
+if (!isDedicated && {dayzPlayerLogin2 select 2}) then {execVM "spawn\spawn.sqf";};
